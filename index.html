@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Responsive Website</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #000;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #ffffff;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav {
+      background: #555;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      padding: 10px 12px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #777;
+      border-radius: 4px;
+    }
+
+    .toggle-btn {
+      background: #222;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    #home {
+      background-color: #c2f0c2;
+      padding: 20px;
+      border-radius: 8px;
+      min-height: 600px;
+    }
+
+    body.dark-mode #home {
+      background-color: #2d4d2d;
+    }
+
+    #about {
+      background-color: #f8c2c2;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    body.dark-mode #about {
+      background-color: #4d2d2d;
+    }
+
+    #services {
+      background-color: #e2e2f0;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    body.dark-mode #services {
+      background-color: #3a3a4d;
+    }
+
+    #services li {
+      cursor: pointer;
+      margin: 10px 0;
+      transition: background 0.2s;
+    }
+
+    #services li:hover {
+      background-color: #d0d0ff;
+      padding: 5px;
+      border-radius: 4px;
+    }
+
+    body.dark-mode #services li:hover {
+      background-color: #5a5a7a;
+    }
+
+    #contact {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    body.dark-mode #contact {
+      background-color: #2a2a2a;
+    }
+
+    #blog {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    body.dark-mode #blog {
+      background-color: #1f1f1f;
+    }
+
+    .blog-post {
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    body.dark-mode .blog-post {
+      border-color: #444;
+    }
+
+    .blog-post h3 {
+      margin-top: 0;
+    }
+
+    .blog-post small {
+      display: block;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    body.dark-mode .blog-post small {
+      color: #aaa;
+    }
+
+    .blog-post a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .blog-post a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    body.dark-mode .calculator {
+      background-color: #1e1e1e;
+    }
+
+    .calculator input,
+    .calculator button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .calculator button {
+      width: 24%;
+      margin-right: 1%;
+    }
+
+    .calculator button:last-child {
+      margin-right: 0;
+    }
+
+    .calculator p {
+      margin-top: 10px;
+    }
+
+    a.youtube-link {
+      color: #d00000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.youtube-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .calculator button {
+        width: 48%;
+        margin: 1% 1%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .calculator button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Website</h1>
+    <p>Simple and clean HTML site with features</p>
+  </header>
+
+  <nav>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </nav>
+
+  <div class="container">
+    <section id="home">
+      <h2>Home</h2>
+      <p>This is the homepage of a basic HTML website. You can add text, images, or links here.</p>
+      <img src="https://via.placeholder.com/800x300" alt="Sample Banner Image">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
+      <h3>Simple Calculator</h3>
+      <div class="calculator">
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <div style="display: flex; flex-wrap: wrap;">
+          <button onclick="calculate('add')">+</button>
+          <button onclick="calculate('subtract')">−</button>
+          <button onclick="calculate('multiply')">×</button>
+          <button onclick="calculate('divide')">÷</button>
+        </div>
+        <p><strong>Result:</strong> <span id="calcResult">---</span></p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>This section tells visitors more about you or your site.</p>
+      <p>Check out my favorite YouTube channel:
+        <a class="youtube-link" href="https://www.youtube.com/" target="_blank">Visit YouTube</a>
+      </p>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <ul>
+        <li onclick="showAlert('Web Design')">Web Design</li>
+        <li onclick="showAlert('Consulting')">Consulting</li>
+        <li onclick="showAlert('SEO Optimization')">SEO Optimization</li>
+      </ul>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Unsplash Random">
+    </section>
+
+    <section id="blog">
+      <h2>📝 Blog</h2>
+
+      <article class="blog-post">
+        <h3>🌟 My First Blog Post</h3>
+        <small>Posted on April 15, 2025</small>
+        <p>This is a short intro to my first blog post. It's all about starting a new journey in web design and learning how HTML and CSS bring ideas to life.</p>
+        <a href="#">Read more</a>
+      </article>
+
+      <article class="blog-post">
+        <h3>🎨 Why I Love Dark Mode</h3>
+        <small>Posted on April 10, 2025</small>
+        <p>In this post, I share why dark mode is awesome, easier on the eyes, and how I added it to this site using a simple toggle function.</p>
+        <a href="#">Read more</a>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: example@example.com</p>
+      <p>Phone: (123) 456-7890</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Simple Website. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function calculate(operation) {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      let result;
+
+      if (isNaN(num1) || isNaN(num2)) {
+        result = "Please enter both numbers!";
+      } else {
+        switch (operation) {
+          case "add":
+            result = num1 + num2;
+            break;
+          case "subtract":
+            result = num1 - num2;
+            break;
+          case "multiply":
+            result = num1 * num2;
+            break;
+          case "divide":
+            result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+            break;
+        }
+      }
+
+      document.getElementById("calcResult").textContent = result;
+    }
+
+    function showAlert(service) {
+      alert("You clicked on " + service + "!");
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>
